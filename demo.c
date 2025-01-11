@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main() {
    int age;
-   // printf() displays the string inside quotation
    printf("Hello, John\n");
    printf("Hi, Frank\n");
    printf("Hi, Billy Bob\n");

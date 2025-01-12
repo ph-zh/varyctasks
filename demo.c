@@ -3,11 +3,22 @@
 
 int main() {
 
-    // constant = fixed value that cannot be altered by the program during its execution
+    // arithmetic operators
 
-    const float PI = 3.14159;
+    // + (addition)
+    // - (substraction)
+    // * (multiplication)
+    // / (division)
+    // % (modulus)
+    // ++ (increment)
+    // -- (decrement)
 
-    printf("%f", PI); 
+    int x = 7;
+    int y = 5;
+
+    x++;
+    y--;
+    printf("%d\n", y);
 
 return 0;
 }

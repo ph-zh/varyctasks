@@ -3,22 +3,30 @@
 
 int main() {
 
-    // arithmetic operators
+    // augmented assignment operators = used to replace a statement where an operator
+    //                                  takes a variable as one of its arguments
+    //                                  and then assigns the results back to the same variable
+    //                                  x = x + 1;
+    //                                  x+=1;
 
-    // + (addition)
-    // - (substraction)
-    // * (multiplication)
-    // / (division)
-    // % (modulus)
-    // ++ (increment)
-    // -- (decrement)
+    int x = 10;
 
-    int x = 7;
-    int y = 5;
+    // x = x + 2;
+    // x+=2;
 
-    x++;
-    y--;
-    printf("%d\n", y);
+    // x = x - 3;
+    // x-=3;
+
+    // x = x * 4;
+    // x*=4;
+
+    // x = x / 5;
+    // x/=5;
+
+    x = x % 4;
+    // x%=2;
+
+    printf("%d\n", x);
 
 return 0;
 }

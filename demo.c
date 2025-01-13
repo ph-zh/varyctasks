@@ -1,23 +1,20 @@
 #include <stdio.h>
-#include <string.h>
+#include <math.h>
 
 int main() {
 
-    char name[25]; // bytes
-    int age;
+   double A = sqrt(9);
+   double B = pow(2, 4);
+   int C = round(3.14);
+   int D = ceil(3.14);
+   int E = floor(3.99);
+   double F = fabs(-100);
+   double G = log(3);
+   double H = sin(45);
+   double I = cos(45);
+   double J = tan(45);
 
-    printf("What your name?\n");
-    // scanf("%s", &name); // function which allows to get user input before space
-    fgets(name, 25, stdin); // function which allows to get user input with space
-    name[strlen(name)-1] = '\0';
-    
-    printf("Ah, Ok, so you are %s\n", name);
-    
-    printf("How old are you ?\n");
-    scanf("%d", &age);
-    printf("You are %d years old\n", age);
-    
-    printf("Nice to meet you %s who is %d\n", name, age);
+   printf("%lf\n", H);
 
 return 0;
 }

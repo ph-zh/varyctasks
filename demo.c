@@ -1,20 +1,27 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
 
-   const double PI = 3.14159;
-   double radius;
-   double circumreference;
-   double area;
+   double A;
+   double B;
+   double C;
 
-   printf("Enter radius of a circle: \n");
-   scanf("%lf", &radius);
+   // & - adress of operator
+   // % - format specifier
+   // %lf - used for user input
+   // %.2f - used for output
+   // %.2f - shows 2 decimal places after the decimal point
 
-   circumreference = 2 * PI * radius;
-   area = PI * radius * radius;
+   printf("Enter side A\n");
+   scanf("%lf", &A); 
 
-   printf("circumreference: %lf\n", circumreference);
-   printf("area: %lf\n", area);
+   printf("Enter side B\n");
+   scanf("%lf", &B);
+
+   C = sqrt(A*A + B*B);
+
+   printf("Side C: %.2f\n", C);
 
 return 0;
 }

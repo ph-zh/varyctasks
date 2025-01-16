@@ -1,45 +1,32 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main() {
 
-   // switch = A more efficient alternative to using many "else if" statements
-   //          allows a value to be tested for equality against many cases
+   char unit;
+   float temp;
 
-   char grade;
+   printf("\nIs the temperature in (F) or (C)?: ");
+   scanf("%c", &unit);
 
-   printf("\nEnter a letter grade: ");
-   scanf("%c", &grade);
+   // current function can read both Capital and Lower case letters
+   unit = toupper(unit);
+   // unit = tolower(unit);
 
-   // if(grade == 'A') {
-   //    printf("Perfect!\n");
-   // } else if (grade == 'B') {
-   //    printf("You did good\n");
-   // } else if (grade == 'C') {
-   //    printf("You did okay\n");
-   // } else if (grade == 'D') {
-   //    printf("At least its not an F\n");
-   // } else if (grade == 'F') {
-   //    printf("Thats not a valid grade\n");
-   // }
+   if(unit == 'C') {
+      printf("\nEnter the temp in Celcius: ");
+      scanf("%f", &temp);
+      temp = (temp * 9 / 5) + 32;
+      printf("\nThe temp in Fahrenheit is: %.1f\n", temp);
 
-   switch(grade) {
-      case 'A':
-      printf("Perfect!\n");
-      break;
-      case 'B':
-      printf("You did good\n");
-      break;
-      case 'C':
-      printf("You did okay\n");
-      break;
-      case 'D':
-      printf("At least its not an F\n");
-      break;
-      case 'F':
-      printf("Thats not a valid grade\n");
-      break;
-      default:
-      printf("Please enter only valid grades\n");
+   } else if (unit == 'F') {
+      printf("The temp is currently in Fahrenheit\n");
+      scanf("%f", &temp);
+      temp = (temp - 32) * 5 / 9;
+      printf("\nThe temp in Celcius is: %.1f\n", temp);
+
+   } else {
+      printf("\n %c, is not a valid unit of measurement\n", unit);
    }
 
 return 0;

@@ -1,32 +1,46 @@
 #include <stdio.h>
-#include <ctype.h>
+
 
 int main() {
 
-   char unit;
-   float temp;
+   char operator;
+   double num1;
+   double num2;
+   double result;
 
-   printf("\nIs the temperature in (F) or (C)?: ");
-   scanf("%c", &unit);
+   printf("Enter an operator (+ - * /): ");
+   scanf("%c", &operator);
 
-   // current function can read both Capital and Lower case letters
-   unit = toupper(unit);
-   // unit = tolower(unit);
+   printf("Enter num1 :\n");
+   scanf("%lf", &num1);
 
-   if(unit == 'C') {
-      printf("\nEnter the temp in Celcius: ");
-      scanf("%f", &temp);
-      temp = (temp * 9 / 5) + 32;
-      printf("\nThe temp in Fahrenheit is: %.1f\n", temp);
+   printf("Enter num2 :\n");
+   scanf("%lf", &num2);
 
-   } else if (unit == 'F') {
-      printf("The temp is currently in Fahrenheit\n");
-      scanf("%f", &temp);
-      temp = (temp - 32) * 5 / 9;
-      printf("\nThe temp in Celcius is: %.1f\n", temp);
-
-   } else {
-      printf("\n %c, is not a valid unit of measurement\n", unit);
+   switch(operator) {
+      case '+':
+         result = num1 + num2;
+         printf("Result of + operator is: %.2lf\n", result);
+         break;
+      
+      case '-':
+         result = num1 - num2;
+         printf("Result of - operator is: %.2lf\n", result);
+         break;
+      
+      case '*':
+         result = num1 * num2;
+         printf("Result of * operator is: %.2lf\n", result);
+         break;
+      
+      case '/':
+         result = num1 / num2;
+         printf("Result of + is: %.2lf\n", result);
+         break;
+      
+      default:
+         printf("%c is not valid\n", operator);
+         break;
    }
 
 return 0;

@@ -1,27 +1,21 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
 
-   double A;
-   double B;
-   double C;
+   int age;
 
-   // & - adress of operator
-   // % - format specifier
-   // %lf - used for user input
-   // %.2f - used for output
-   // %.2f - shows 2 decimal places after the decimal point
+   printf("\nEnter your age: ");
+   scanf("%d", &age);
 
-   printf("Enter side A\n");
-   scanf("%lf", &A); 
-
-   printf("Enter side B\n");
-   scanf("%lf", &B);
-
-   C = sqrt(A*A + B*B);
-
-   printf("Side C: %.2f\n", C);
+   if(age >= 18) {
+      printf("You are now signed up!\n");
+   } else if (age < 0) {
+      printf("You have not been born yet!\n");
+   } else if (age == 0) {
+      printf("You cant sign up! You were just born!\n");
+   } else {
+      printf("You are too young to signed up!\n");
+   }
 
 return 0;
 }

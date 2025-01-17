@@ -1,46 +1,23 @@
 #include <stdio.h>
-
+#include <stdbool.h> // directive which allows to use Boolean data type (true or false)
+// true: Equivalent to 1.
+// false: Equivalent to 0.
 
 int main() {
 
-   char operator;
-   double num1;
-   double num2;
-   double result;
+   // Logical operator = && (AND) checks if two conditions are true
 
-   printf("Enter an operator (+ - * /): ");
-   scanf("%c", &operator);
+   // && = AND
+   // || = OR
+   // ! = NOT
 
-   printf("Enter num1 :\n");
-   scanf("%lf", &num1);
+   float temp = 25;
+   bool sunny = true;
 
-   printf("Enter num2 :\n");
-   scanf("%lf", &num2);
-
-   switch(operator) {
-      case '+':
-         result = num1 + num2;
-         printf("Result of + operator is: %.2lf\n", result);
-         break;
-      
-      case '-':
-         result = num1 - num2;
-         printf("Result of - operator is: %.2lf\n", result);
-         break;
-      
-      case '*':
-         result = num1 * num2;
-         printf("Result of * operator is: %.2lf\n", result);
-         break;
-      
-      case '/':
-         result = num1 / num2;
-         printf("Result of + is: %.2lf\n", result);
-         break;
-      
-      default:
-         printf("%c is not valid\n", operator);
-         break;
+   if(temp >= 0 && temp <= 30 && sunny){
+      printf("The weather is good!\n");
+   } else {
+      printf("The weather is bad!\n");
    }
 
 return 0;

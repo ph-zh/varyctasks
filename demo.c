@@ -1,26 +1,22 @@
 #include <stdio.h>
-#include <stdbool.h> // directive which allows to use Boolean data type (true or false)
-// true: Equivalent to 1.
-// false: Equivalent to 0.
+
+/* In C, the compiler processes the code from top to bottom.
+   Declare the function at the beginning of the file or before main() 
+   so the compiler knows about it when main calls it.
+*/
+
+void birthday();
 
 int main() {
 
-   // Logical operator = && (AND) checks if two conditions are true
-   // Logical operator = || (OR) checks if at least one conditions is true
-   // Logical operator = ! (NOT) reserse the state of a condition
-
-   // && = AND
-   // || = OR
-   // ! = NOT
-
-   bool sunny = false;
-
-   if(sunny) {
-      printf("its sunny outside!\n");
-   } else {
-      printf("its cloudy outside!\n");
-   }
+   birthday();
 
 
 return 0;
+}
+
+void birthday() {
+   printf("Hello1!\n");
+   printf("Hello2!\n");
+   printf("Hello3!\n");
 }

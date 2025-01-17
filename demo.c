@@ -6,18 +6,18 @@
 int main() {
 
    // Logical operator = && (AND) checks if two conditions are true
+   // Logical operator = || (OR) checks if at least one conditions is true
 
    // && = AND
    // || = OR
    // ! = NOT
 
    float temp = 25;
-   bool sunny = true;
 
-   if(temp >= 0 && temp <= 30 && sunny){
-      printf("The weather is good!\n");
-   } else {
+   if(temp <= 0 || temp >= 30) {
       printf("The weather is bad!\n");
+   } else {
+      printf("The weather is nice!\n");
    }
 
 return 0;

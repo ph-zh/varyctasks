@@ -1,22 +1,14 @@
 #include <stdio.h>
-
-/* In C, the compiler processes the code from top to bottom.
-   Declare the function at the beginning of the file or before main() 
-   so the compiler knows about it when main calls it.
-*/
-
-void birthday();
-
-int main() {
-
-   birthday();
-
-
-return 0;
+// x and y represents parameters, they could have any name unless type is the sae with the arguments
+void birthday(char x[], int y) { 
+   printf("Happy Birthday dear %s!\n", x);
+   printf("You are %d years old!\n", y);
 }
 
-void birthday() {
-   printf("Hello1!\n");
-   printf("Hello2!\n");
-   printf("Hello3!\n");
+int main() {
+   char name[] = "Frank";
+   int age = 21;
+
+   birthday(name, age); // name and age are arguments
+   return 0;
 }

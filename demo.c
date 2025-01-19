@@ -1,13 +1,16 @@
 #include <stdio.h>
 
-double square(double x) {
-   return x * x * x;
+// ternary operator = shortcut to if/else when assigning/returning a value
+// formula - (condition) ? value if true : value if false
+
+int findMax(int x, int y) {
+   return (x > y) ? x : y;
 }
-// return == returns a value back to a caling function
 
 int main() {
 
-   double x = square(3.14);
-   printf("%lf\n", x);
+   int max = findMax(5, 4);
+   printf("%d\n", max);
+
    return 0;
 }

@@ -1,14 +1,20 @@
 #include <stdio.h>
-// x and y represents parameters, they could have any name unless type is the sae with the arguments
-void birthday(char x[], int y) { 
+
+// function cant see inside other function. Eg main and birthday
+// arguments inside current function names parameters
+// name of the parameters could be renamed unless they keep same type as char and int
+
+void birthday(char x[], int y) {
    printf("Happy Birthday dear %s!\n", x);
-   printf("You are %d years old!\n", y);
+   printf("You are %d yeas old!\n", y);
 }
 
 int main() {
-   char name[] = "Frank";
-   int age = 21;
 
-   birthday(name, age); // name and age are arguments
+   char name[] = "Franky Spignetty";
+   int age = 21;
+   // passing name and age variables as arguments
+   birthday(name, age);
+
    return 0;
 }

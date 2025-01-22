@@ -73,10 +73,32 @@ int strcmpi(const char *str1, const char *str2) {
     return tolower((unsigned char)*str1) - tolower((unsigned char)*str2);
 }
 
+//int result = strnicmp(string1, string2, 1); // string compare n characters
+int strnicmp(const char *str1, const char *str2, size_t n) {
+    while (n > 0 && *str1 && *str2) {
+        char c1 = tolower((unsigned char)*str1);
+        char c2 = tolower((unsigned char)*str2);
+
+        if (c1 != c2) {
+            return c1 - c2; // Return difference
+        }
+
+        str1++;
+        str2++;
+        n--;
+    }
+
+    if (n == 0) {
+        return 0; // Equal up to the first n characters
+    }
+
+    return tolower((unsigned char)*str1) - tolower((unsigned char)*str2);
+}
+
 int main() {
 
-    char string1[] = "Billy";
-    char string2[] = "McAlister";
+    char string1[] = "Bi";
+    char string2[] = "Ba";
 
     // strlwr(string1); // converts a string to lowercase
     // strupr(string1); // coverts a string to uppercase
@@ -113,8 +135,15 @@ int main() {
     // }
 
     // int result = strcmpi(string1, string1); // string compare all (ignore case)
+    // if (result == 0) {
+    //     printf("The strings are equal (case-insensitive).\n");
+    // } else {
+    //     printf("The strings are different.\n");
+    // }
+
+    // int result = strnicmp(string1, string2, 1); // string compare n characters
     if (result == 0) {
-        printf("The strings are equal (case-insensitive).\n");
+        printf("The strings are equal (case-insensitive, first 1 character).\n");
     } else {
         printf("The strings are different.\n");
     }

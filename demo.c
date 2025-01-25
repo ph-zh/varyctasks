@@ -2,28 +2,14 @@
 
 int main() {
 
-    // nested loop = a loop inside of another loop
+    // continue = skips rest of code & forces the next iteration of the loop
+    // break = exits a loop/switch
 
-    int rows;
-    int columns;
-    char symbol;
-
-    printf("\nEnter number of rows: ");
-    scanf("%d", &rows);
-
-    printf("Enter number of columns: ");
-    scanf("%d", &columns);
-
-    scanf("%c", &symbol);
-
-    printf("Enter a symbol to use: ");
-    scanf("%c", &symbol);
-
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= columns; j++) {
-            printf("%c", symbol);
+    for (int i = 1; i <= 20; i++) {
+        if (i == 13) {
+            continue;
         }
-        printf("\n");
+        printf("%d\n", i);
     }
 
     return 0;

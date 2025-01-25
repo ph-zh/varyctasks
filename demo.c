@@ -2,21 +2,29 @@
 
 int main() {
 
-    // while loop = checks a condition, THEN executes a block of ode if condition is true
-    // do while loop = always executes a block of code once, THEN checks a condition
+    // nested loop = a loop inside of another loop
 
-    int number = 0;
-    int sum = 0;
+    int rows;
+    int columns;
+    char symbol;
 
-     do {
-        printf("Enter a number above 0: \n");
-        scanf("%d", &number);
-        if (number > 0) {
-            sum += number;
+    printf("\nEnter number of rows: ");
+    scanf("%d", &rows);
+
+    printf("Enter number of columns: ");
+    scanf("%d", &columns);
+
+    scanf("%c", &symbol);
+
+    printf("Enter a symbol to use: ");
+    scanf("%c", &symbol);
+
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= columns; j++) {
+            printf("%c", symbol);
         }
-    } while (number > 0);
-
-    printf("sum: %d\n", sum);
+        printf("\n");
+    }
 
     return 0;
 }

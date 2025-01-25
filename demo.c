@@ -8,7 +8,7 @@ int main() {
     printf("Number of cars in the pool: %d\n", size); // array size
 
     // cars[0] = "Tesla";
-    strcpy(cars[0], "Tesla");
+    strcpy(cars[0], "Tesla"); // replace char by the element
     for (int i = 0; i < sizeof(cars) / sizeof(cars[0]); i++) {
         printf("%d. ", i + 1);
         printf("%s\n", cars[i]);

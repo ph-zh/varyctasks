@@ -2,16 +2,29 @@
 #include <string.h>
 
 int main() {
-    // array of strings
-    char cars[][10] = {"Mustang", "Corvette", "Camaro"};
-    int size = sizeof(cars) / sizeof(cars[0]);
-    printf("Number of cars in the pool: %d\n", size); // array size
 
-    // cars[0] = "Tesla";
-    strcpy(cars[0], "Tesla"); // replace char by the element
-    for (int i = 0; i < sizeof(cars) / sizeof(cars[0]); i++) {
-        printf("%d. ", i + 1);
-        printf("%s\n", cars[i]);
-    }
+    // Swap values of two variables
+
+    // char x = 'X';
+    // char y = 'Y';
+    // char temp;
+
+    // temp = x;
+    // x = y;
+    // y = temp;
+
+    char x[15] = "Water";
+    char y[15] = "Soda";
+    char temp[15];
+
+    strcpy(temp, x);
+    strcpy(x, y);
+    strcpy(y, temp);
+
+    printf("x = %s\n", x);
+    printf("y = %s\n", y);
+
+
+
     return 0;
 }

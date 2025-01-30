@@ -1,23 +1,19 @@
 #include <stdio.h>
-#include <string.h>
 
-struct Student {
-    char name[12];
-    float gpa;
-};
+enum Day{Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7};
 
 int main() {
 
-    struct Student student1 = {"Frank", 3.0};
-    struct Student student2 = {"John", 4.5};
-    struct Student student3 = {"Billy", 2.2};
-    struct Student student4 = {"Zeberdy", 5.1};
+    // enum (Enumeration) = a user defined type of named integer identifiers
+    //                      helps to make a program more readable
 
-    struct Student students[] = {student1, student2, student3, student4};
+    enum Day today = Sun;
+    printf("%d\n", today); // enums are NOT Strings but they can be treated as int
 
-    for (int i = 0; i < sizeof(students)/sizeof(students[0]); i++) {
-        printf("%-12s", students[i].name); // -12 make indent / formatting to right
-        printf("%.2f\n", students[i].gpa);
+    if (today == Sun || today == Sat) {
+        printf("It's the weekend! Party time!\n");
+    } else {
+        printf("I have to work today\n");
     }
 
     return 0;

@@ -1,38 +1,37 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <ctype.h>
 
 int main() {
 
-    const int MIN = 1;
-    const int MAX = 100;
-    int guess;
-    int guesses = 0;
-    int answer;
+    char questions[][100] = {"1. What year did the C language debut?: ",
+                             "2. Who is credited with creating C?: ",
+                             "3. What is predecessor of C?: "};
 
-    // uses the current time as a seed to generate random numbers
-    srand(time(0));
+    char options[][100] = {"A.1969", "B.1972", "C.1975", "D.1999",
+                           "A. Dennis Ritchie", "B. Nikola Tesla", "C. John Carmack", "D. Doc Brown",
+                           "A. Objective C", "B. B", "C. C++", "D. C#"};
 
-    // generate a random number between MIN & MAX
-    answer = (rand() % MAX) + MIN; // % as a modulus operator
+    char answers[3] = {'B', 'A', 'B'};
+    int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
 
-    do {
-        printf("Enter a number between 1 and 100: ");
-        scanf("%d", &guess);
-        if (guess < answer) {
-            printf("The number is too small.\n");
-        } else if (guess > answer) {
-            printf("The number is too large.\n");
-        } else {
-            printf("The number is correct\n");
+    char guess;
+    int score;
+
+    printf("Quiz Game\n");
+
+    for (int i = 0; i < numberOfQuestions; i++) {
+        printf("************************\n");
+        printf("%s\n", questions[i]);
+
+        for (int j = (i * 4); j < (i * 4) + 4; j++) {
+            printf("%s\n", options[j]);
         }
-        guesses++;
-    } while (guess != answer);
+        printf("guess: ");
+        scanf("%c", &guess);
+        scanf("%c"); // clear \n from input buffer
 
-    printf("*****************************\n");
-    printf("The answer: %d\n", answer);
-    printf("guesses: %d\n", guesses);
-    printf("*****************************");
+        
+    }
 
     return 0;
 }

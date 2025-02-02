@@ -1,20 +1,20 @@
 #include <stdio.h>
-
-enum Day{Sun = 1, Mon = 2, Tue = 3, Wed = 4, Thu = 5, Fri = 6, Sat = 7};
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
 
-    // enum (Enumeration) = a user defined type of named integer identifiers
-    //                      helps to make a program more readable
+    // pseudo random numbers = A set of values or elements that are statistically random
+    //                         (Don't use these for any sort of cryptographic security)
 
-    enum Day today = Sun;
-    printf("%d\n", today); // enums are NOT Strings but they can be treated as int
+    srand(time(0));
 
-    if (today == Sun || today == Sat) {
-        printf("It's the weekend! Party time!\n");
-    } else {
-        printf("I have to work today\n");
-    }
+    int number1 = (rand() % 20) + 1; // random number between 0 - 32 767
+    int number2 = (rand() % 20) + 1;
+    int number3 = (rand() % 20) + 1;
 
+    printf("%d\n", number1);
+    printf("%d\n", number2);
+    printf("%d\n", number3);
     return 0;
 }

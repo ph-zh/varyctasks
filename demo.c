@@ -15,7 +15,7 @@ int main() {
     int numberOfQuestions = sizeof(questions)/sizeof(questions[0]);
 
     char guess;
-    int score;
+    int score = 0;
 
     printf("Quiz Game\n");
 
@@ -30,7 +30,15 @@ int main() {
         scanf("%c", &guess);
         scanf("%c"); // clear \n from input buffer
 
-        
+        guess = toupper(guess);
+        if (guess == answers[i]) {
+            printf("Correct! ✅ 😃\n");
+            score++;
+        } else {
+            printf("Wrong! ❌ 😢\n");
+        }
+        printf("************************\n");
+        printf("Final score: %d/%d\n", score, numberOfQuestions);
     }
 
     return 0;

@@ -2,31 +2,24 @@
 
 int main() {
 
-    // BITWISE OPERATORS = special operators used in bit level programming
-    // & = AND
-    // | = OR
-    // ^ = XOR (exclusive OR)
-    // << left shift
-    // >> right shift
+    // memory = an array of bytes within RAM (street)
+    // memory block = a single unit (byte) within memory, used to hold some value (person)
+    // memory address = the address of where a memory block is located (house address)
 
-    int x =6; // 6 = 00000110
-    int y = 12; // 12 = 00001100
-    int z = 0; // 0 = 00000000
+    // decimal: 0-9 (1,2,3,4,5,6,7,8,9)
+    // hexadecimal: 0-9 + A - F (0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F)
 
-    z = x & y;
-    printf("AND = %d\n", z);
+    char a = 'X';
+    char b = 'Y';
+    char c = 'Z';
 
-    z = x | y;
-    printf("OR = %d\n", z);
+    printf("%d bytes\n", sizeof(a));
+    printf("%d bytes\n", sizeof(b));
+    printf("%d bytes\n", sizeof(c));
 
-    z = x ^ y;
-    printf("XOR = %d\n", z);
-
-    z = x << 2;
-    printf("Left Shift = %d\n", z);
-
-    z = x >> 1;
-    printf("Right Shift = %d\n", z);
+    printf("%p\n", &a); // p - is format specifier to see the address of variable
+    printf("%p\n", &b);
+    printf("%p\n", &c);
 
     return 0;
 }

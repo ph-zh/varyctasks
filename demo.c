@@ -17,15 +17,15 @@ void printWinner(char);
 
 int main() {
 
-    char winner = ' ';
     char response;
 
     do {
+
         char winner = ' ';
         char response = ' ';
         resetBoard();
 
-        while(winner == ' ' && checkFreeSpaces() !=0) {
+        while(winner == ' ' && checkFreeSpaces() != 0) {
             printBoard();
             playerMove();
             winner = checkWinner();
@@ -43,9 +43,8 @@ int main() {
         printBoard();
         printWinner(winner);
 
-        printf("Whould you like to play again? (Y/N)\n");
-        scanf("%c");
-        scanf("%c", &response);
+        printf("Whould you like to play again? (Y/N): \n");
+        scanf(" %c", &response);
         response = toupper(response);
     } while (response == 'Y');
     
@@ -81,8 +80,8 @@ int checkFreeSpaces() {
     return freeSpaces;
 }
 void playerMove() {
-    int x;
-    int y;
+    int x = 0;
+    int y = 0;
 
     do {
         printf("Enter row #(1-3): ");
@@ -92,7 +91,7 @@ void playerMove() {
         scanf("%d", &y);
         y--;
     
-        if(board[x][y != ' ']) {
+        if(board[x][y] != ' ') {
             printf("Invalid move!\n");
         } else {
             board[x][y] = PLAYER;
@@ -103,8 +102,8 @@ void playerMove() {
 void computerMove() {
     // creates a seed based on curent time
     srand(time(0));
-    int x;
-    int y;
+    int x = 0;
+    int y = 0;
     if(checkFreeSpaces() > 0) {
         do {
             x = rand() % 3;
@@ -132,17 +131,17 @@ char checkWinner(){
     if(board[0][0] == board[1][1] && board[0][0] == board[2][2]) {
         return board[0][0];
     }
-    if(board[0][2] == board[1][1] && board[0][0] == board[2][0]) {
+    if(board[0][2] == board[1][1] && board[0][2] == board[2][0]) {
         return board[0][2];
     }
     return ' ';
 }
 void printWinner(char winner){
     if(winner == PLAYER) {
-        printf("You Win!");
+        printf("You Win!\n");
     } else if(winner == COMPUTER) {
-        printf("You lose!");
+        printf("You lose!\n");
     } else {
-        printf("Its a tie!");
+        printf("Its a tie!\n");
     }
 }

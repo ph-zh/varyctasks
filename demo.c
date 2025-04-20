@@ -1,11 +1,13 @@
 #include <stdio.h>
 
 int main() {
+    int secondsBeforeStart = 70;
 
-    for (int i = 1; i <= 17; i = i + 1) {
-        printf("%d-я овечка перепрыгнула через забор.\n", i);
-    } 
-    printf("Хомяки сыты, овцы целы. Можно отдохнуть!");
+    for(int i = secondsBeforeStart; 0 <= i; i = i - 7) {
+        printf("До старта SpaceY остаось %d\n", i);
+    }
+    printf("Поехали! Узнаем, есть ли жизнь на Марсе!\n");
+
 
     return 0;
 }

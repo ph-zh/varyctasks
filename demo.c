@@ -1,13 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int secondsBeforeStart = 70;
+    int days = 5;
+    int moneyPerDay = 200;
+    int sum = 0;
 
-    for(int i = secondsBeforeStart; 0 <= i; i = i - 7) {
-        printf("До старта SpaceY остаось %d\n", i);
+    for(int i = 1; i <= days; i++) {
+        sum = sum + moneyPerDay;
+        printf("Day %d already %d dollars\n", i, sum);
     }
-    printf("Поехали! Узнаем, есть ли жизнь на Марсе!\n");
-
 
     return 0;
 }

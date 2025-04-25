@@ -1,15 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int money = 500; // Деньги на корм
-    int foodPerDay = 100; // Стоимость пачки корма
-    int days = 0; // Дни, когда вы сможете покупать корм
-
-    for(int i = money - foodPerDay; i >= 0; i = i - foodPerDay) {
-        days = days + 3;
-        printf("On %d day you will have %d Dollars\n", days, i);
+    int counter = 0;
+    for (int i = 0; i < 10; i = i + 1) {
+        if (i > 7) {
+            counter = counter + 2;
+        }
+        counter = counter + 1;
     }
-    printf("Your money will be enough for %d days\n", days);
+    printf("%d\n", counter);
 
     return 0;
 }

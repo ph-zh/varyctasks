@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int counter = 0;
-    for (int i = 0; i < 10; i = i + 1) {
-        if (i > 7) {
-            counter = counter + 2;
+    int flatsNumber = 5; // Количество квартир на этаже
+    int floorsNumber = 10; // Количество этажей
+
+    for (int i = 1; i <= floorsNumber; i++) {
+        for (int j = 1; j <= flatsNumber; j++) {
+            int currentFlat = (i - 1) * flatsNumber + j; // Заготовка формулы для учёта квартир
+            printf("Этаж %d квартира %d — доставлено.\n", i, currentFlat);
         }
-        counter = counter + 1;
     }
-    printf("%d\n", counter);
 
     return 0;
 }

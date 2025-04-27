@@ -1,22 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int main() {
 
-    int dayCount = 0; // Для учёта дней накоплений
-    int moneyTotal = 0; // Суммарное количество накоплений
-    int moneyToday; // Сколько откладываем сегодня
-    int goal = 5000; // Финансовая цель
+    double goal = 1000000;
+    double interestRate = 0.05;
+    int years = 0;
+    double balance;
 
-    srand(time(NULL));
+    printf("Сколько денег у вас сейчас: \n");
+    scanf("%lf", &balance);
 
-    while (moneyTotal <= goal) {
-        moneyToday = rand()%300; // Случайная сумма на сегодня
-        moneyTotal = moneyTotal + moneyToday; // Добавили эти деньги в копилку
-        dayCount = dayCount + 1; // Засчитали день
+    while(balance <= goal) {
+        balance = balance + balance * interestRate;
+        years = years + 1;
     }
+    printf("in %d years you will collect %.0f dollars\n", years, goal);
 
-    printf("Ура! Вы смогли накопить %d за %d дней.\n", goal, dayCount);
     return 0;
 }

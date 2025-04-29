@@ -1,20 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main() {
+    srand(time(NULL));
+    int randomInt = rand()%1001;
+    int userInput = -1;
 
-    double goal = 1000000;
-    double interestRate = 0.05;
-    int years = 0;
-    double balance;
+    printf("Я загадал число от 0 до 1000.\n");
+    printf("Ваш ход:\n");
+    
+    while(randomInt != userInput) {
+        scanf("%d", &userInput);
 
-    printf("Сколько денег у вас сейчас: \n");
-    scanf("%lf", &balance);
-
-    while(balance <= goal) {
-        balance = balance + balance * interestRate;
-        years = years + 1;
+        if (randomInt < userInput) { // Условие проверяется в цикле
+            printf("Меньше\n");
+        } else if (randomInt > userInput) {
+            printf("Больше\n");
+        } else {
+            printf("Вы великолепны! Именно это я загадал.\n");
+        }
     }
-    printf("in %d years you will collect %.0f dollars\n", years, goal);
-
     return 0;
 }

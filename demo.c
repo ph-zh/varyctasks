@@ -1,16 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
 
 int main() {
 
-    int sum = 0;
-    int input = -1;
-    
+    int secretCode;
+    int pilotInput;
+    srand(time(NULL));
 
-    while (input != 0) {
-        scanf("%d", &input);
-        sum = sum + input;
+    while(true) {
+        secretCode = rand()%101;
+        printf("Ракета SpaceY на орбите!\n");
+        pilotInput = rand()%101;
+
+        if(secretCode == pilotInput) {
+            printf("Пилот угадал число! Летим домой!\n");
+            break;
+        }
     }
-    printf("Sum of the entered values: %d\n", sum);
-    
     return 0;
 }

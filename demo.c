@@ -1,24 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <stdbool.h>
+
 
 int main() {
-    srand(time(NULL));
-    int randomInt = rand()%1001;
-    int userInput = -1;
+    int x;
+    printf("Оцените работу приложения Зеленоглазое-Такси по шкале от 1 до 3\n");
 
-    printf("Я загадал число от 0 до 1001.\n");
-    printf("Ваш ход:\n");
-    
-    while(randomInt != userInput) {
-        scanf("%d", &userInput);
+    while (true) { // Запускаем бесконечный цикл
 
-        if (randomInt < userInput) { // Условие проверяется в цикле
-            printf("Меньше\n");
-        } else if (randomInt > userInput) {
-            printf("Больше\n");
+        if(scanf("%d", &x) != 1) {
+            printf("Пожалуйста, введите корректное число от 1 до 3\n");
+            while(getchar() != '\n');
+            continue;
+        }
+
+        if (x == 1) { //Если пользователь вводит 1
+            printf("Спасибо за вашу оценку. Мы станем лучше!\n"); // Благодарим
+            break; // Выходим из цикла
+        }
+        if (x == 2) { // Если оценка равна 2
+            printf("Спасибо за вашу оценку. Есть куда расти!\n");
+            break; // И выходим из цикла
+        }
+        if (x == 3) { // Если оценка равна 3
+            printf("Спасибо за высокую оценку! Рады, что вы выбрали нас!\n");
+            break; // И выходим из цикла
         } else {
-            printf("Вы великолепны! Именно это я загадал.\n");
+            // Пользователь ввёл не 1, 2 или 3 - повторяем просьбу
+            printf("Ваша оценка должна быть в диапазоне от 1 до 3\n");
         }
     }
     return 0;

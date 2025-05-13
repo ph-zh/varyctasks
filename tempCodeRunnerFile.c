@@ -1,10 +1,3 @@
-int main() {
-
-    char command[100];
-    printf("What is your input?\n");
-    scanf("%s", command);
-    printf("Your input is %s\n", command);
-
-
-    return 0;
-}
+  // char swap = plans[4]; // Присвойте swap значение элемента, который вы заменяете
+    // plans[4] = plans[0];    // Присвойте значение одного элемента другому
+    // plans[0] = swap;        // В swap должно оказаться значение элемента, выбранного на замену

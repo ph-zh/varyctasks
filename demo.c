@@ -1,31 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
 int main()
 {
-    char const *plans[] = {"Поехать в Китай по работе",
-                      "Отметить день рождения с друзьями",
-                      "Обустроить рабочее место",
-                      "Научиться вести бюджет",
-                      "Купить диван",
-                      "Поехать на музыкальный фестиваль",
-                      "Попросить на работе один удалённый день в неделю",
-                      "Заняться спортом",
-                      "Поехать в Японию в отпуск",
-                      "Начать внедрять zero waste-подходы в повседневную жизнь",
-                      "Встречаться с друзьями не реже раза в неделю",
-                      "Перестать есть в кровати"};
-    
-    char const *swap = plans[4]; // Присвойте swap значение элемента, который вы заменяете
-    plans[4] = plans[0];    // Присвойте значение одного элемента другому
-    plans[0] = swap;        // В swap должно оказаться значение элемента, выбранного на замену
+        char *currencies[] = {"USD ", "EUR ", "JPY ", "RUB\n"};
+        char input[100];
+        int country;
 
-    // Замените фразу "Поехать в Японию в отпуск" на "Поехать в Сочи в отпуск"
-    plans[8] = "Поехать в Сочи в отпуск";
+        printf("В вашем тревел-кошельке доступны следующие валюты:\n");
+        printf("%s", currencies[0]);
+        printf("%s", currencies[1]);
+        printf("%s", currencies[2]);
+        printf("%s", currencies[3]);
 
-    printf("Изменения в планах:\n");
-    printf("1. %s\n", plans[0]);
-    printf("5. %s\n", plans[4]);
-    printf("9. %s\n", plans[8]);
+        printf("Если вы планируете поездку в Данию, введите 1, а если в Китай, введите 2\n");
+        fgets(input, sizeof(input), stdin); // read String
+        country = atoi(input);     // convert String to Int
+        
+
+        // Если выбрана Дания, измените значение элемента евро на кроны DKK
+        // Если Китай, измените значение элемента иена на юани CNY
+        if (country == 1) {
+            currencies[1] = "DKK ";
+        } else if (country == 2) {
+            currencies[2] = "CNY ";
+        }
+
+        printf("В вашем тревел-кошельке доступны следующие валюты:\n");
+        printf("%s", currencies[0]);
+        printf("%s", currencies[1]);
+        printf("%s", currencies[2]);
+        printf("%s", currencies[3]);
 
     return 0;
 }

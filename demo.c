@@ -5,34 +5,43 @@
 
 int main()
 {
-        char *currencies[] = {"USD ", "EUR ", "JPY ", "RUB\n"};
-        char input[100];
-        int country;
+        char *dishes[] = {"Ризотто ", "Тартар ", "Шурпа ", "Панна-котта ", "Сашими "};
+        char input[100]; // buffer for reading input as string
+        int firstIndex;
+        int secondIndex;
 
-        printf("В вашем тревел-кошельке доступны следующие валюты:\n");
-        printf("%s", currencies[0]);
-        printf("%s", currencies[1]);
-        printf("%s", currencies[2]);
-        printf("%s", currencies[3]);
+        printf("Вы продегустировали пять блюд.\n");
+        printf("Введите индекс блюда, которое хотите переместить:\n");
+        printf("0-Ризотто\n");
+        printf("1-Тартар\n");
+        printf("2-Шурпа\n");
+        printf("3-Панна-котта\n");
+        printf("4-Сашими\n");
 
-        printf("Если вы планируете поездку в Данию, введите 1, а если в Китай, введите 2\n");
+        // Считайте из консоли индекс блюда, которое нужно переместить
         fgets(input, sizeof(input), stdin); // read String
-        country = atoi(input);     // convert String to Int
-        
+        firstIndex = atoi(input);     // convert String to Int
 
-        // Если выбрана Дания, измените значение элемента евро на кроны DKK
-        // Если Китай, измените значение элемента иена на юани CNY
-        if (country == 1) {
-            currencies[1] = "DKK ";
-        } else if (country == 2) {
-            currencies[2] = "CNY ";
-        }
+        printf("Введите позицию, на которую хотите его переместить, от 0 до 4:\n");
+        // Объявите переменную secondIndex для нового положения (индекса) блюда, считайте его из консоли
+        fgets(input, sizeof(input), stdin); // read String
+        secondIndex = atoi(input);     // convert String to Int
 
-        printf("В вашем тревел-кошельке доступны следующие валюты:\n");
-        printf("%s", currencies[0]);
-        printf("%s", currencies[1]);
-        printf("%s", currencies[2]);
-        printf("%s", currencies[3]);
+        // Сохраните значение блюда под индексом firstIndex в переменную swap
+        char *swap = dishes[firstIndex];
+
+        // Присвойте блюду с индексом firstIndex значение блюда под индексом secondIndex
+        dishes[firstIndex] = dishes[secondIndex];
+
+        // Присвойте блюду с индексом secondIndex значение переменной swap
+        dishes[secondIndex] = swap;
+
+        printf("Ваш рейтинг блюд:\n");
+        printf("%s\n", dishes[0]);
+        printf("%s\n", dishes[1]);
+        printf("%s\n", dishes[2]);
+        printf("%s\n", dishes[3]);
+        printf("%s\n", dishes[4]);
 
     return 0;
 }

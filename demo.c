@@ -1,47 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
+#define _CRT_SECURE_NO_WARNINGS // чтобы компилятор не ругался на scanf
+#include <stdio.h> // подключаем стандартный модуль ввода-вывода
 
-int main()
-{
-        char *dishes[] = {"Ризотто ", "Тартар ", "Шурпа ", "Панна-котта ", "Сашими "};
-        char input[100]; // buffer for reading input as string
-        int firstIndex;
-        int secondIndex;
-
-        printf("Вы продегустировали пять блюд.\n");
-        printf("Введите индекс блюда, которое хотите переместить:\n");
-        printf("0-Ризотто\n");
-        printf("1-Тартар\n");
-        printf("2-Шурпа\n");
-        printf("3-Панна-котта\n");
-        printf("4-Сашими\n");
-
-        // Считайте из консоли индекс блюда, которое нужно переместить
-        fgets(input, sizeof(input), stdin); // read String
-        firstIndex = atoi(input);     // convert String to Int
-
-        printf("Введите позицию, на которую хотите его переместить, от 0 до 4:\n");
-        // Объявите переменную secondIndex для нового положения (индекса) блюда, считайте его из консоли
-        fgets(input, sizeof(input), stdin); // read String
-        secondIndex = atoi(input);     // convert String to Int
-
-        // Сохраните значение блюда под индексом firstIndex в переменную swap
-        char *swap = dishes[firstIndex];
-
-        // Присвойте блюду с индексом firstIndex значение блюда под индексом secondIndex
-        dishes[firstIndex] = dishes[secondIndex];
-
-        // Присвойте блюду с индексом secondIndex значение переменной swap
-        dishes[secondIndex] = swap;
-
-        printf("Ваш рейтинг блюд:\n");
-        printf("%s\n", dishes[0]);
-        printf("%s\n", dishes[1]);
-        printf("%s\n", dishes[2]);
-        printf("%s\n", dishes[3]);
-        printf("%s\n", dishes[4]);
-
-    return 0;
-}
+int main() { // начало главной функции
+  int k;  // объявляем целую переменную key
+  int i = 1; // сразу объявляем переменную со значением
+  int sum = 0; // на старте сумма равна нулю
+  printf("k = "); // выводим строчку на экран, но пока без значения суммы
+  scanf("%d", &k);   // ждём ввода числа и записываем его в переменную k
+  while (i <= k)     // делаем цикл — пока i меньше или равно k
+  { // как раз те самые фигурные скобки для тела цикла
+    sum = sum + i; // добавляем значение i к сумме
+    i++;           // увеличиваем i на 1
+  } // закончилось тело цикла
+  printf("sum = %d\n", sum); // выводим значение суммы, оно получится на той же строке, что и первая строчка
+  getchar(); // ждём нажатия любой клавиши, чтобы пользователь мог успеть прочитать ответ
+  return 0; // знак того, что программа завершилась без ошибок
+} // конец программы

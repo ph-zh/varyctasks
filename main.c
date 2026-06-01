@@ -1,15 +1,18 @@
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
 
-    bool isOnline = 1;
+    int age = 25;
+    float price = 19.99;
+    double pi = 3.14159;
+    char currency = '$';
+    char name[20] = "Franky Spignetti";
 
-    if (isOnline) {
-        printf("Online\n");
-    } else {
-        printf("Offline\n");
-    }
+    printf("%d\n", age);
+    printf("%f\n", price);
+    printf("%lf\n", pi);
+    printf("%c\n", currency);
+    printf("%s\n", name);
 
     return 0;
 }

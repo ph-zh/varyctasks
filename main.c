@@ -2,17 +2,13 @@
 
 int main() {
 
-    int age = 25;
-    float price = 19.99;
-    double pi = 3.14159;
-    char currency = '$';
-    char name[20] = "Franky Spignetti";
+    float price1 = 19.99;
+    float price2 = 1.50;
+    float price3 = -100.00;
 
-    printf("%d\n", age);
-    printf("%f\n", price);
-    printf("%lf\n", pi);
-    printf("%c\n", currency);
-    printf("%s\n", name);
+    printf("%+7.2f\n", price1);
+    printf("%+7.2f\n", price2);
+    printf("%+7.2f\n", price3);
 
     return 0;
 }
